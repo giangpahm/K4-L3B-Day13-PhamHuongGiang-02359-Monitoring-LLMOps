@@ -22,39 +22,48 @@ Ví dụ dưới đây minh họa mức độ cụ thể cần có. Học viên 
 
 ## Alert 1
 
-- Tên:
-- Severity:
-- Duration:
-- Kênh thông báo: Slack
-- SLI/SLO liên quan:
-- Điều kiện và thời gian duy trì:
-- Ảnh hưởng tới người dùng:
+- Tên: `HighLatencyP95`
+- Severity: `warning`
+- Duration: `5m`
+- Kênh thông báo: Slack `#k4-l3b-alerts`
+- SLI/SLO liên quan: latency của request thành công trong primary SLO.
+- Điều kiện và thời gian duy trì: `p95(response_sent.latency_ms) > 3000ms` trong 5 phút.
+- Ảnh hưởng tới người dùng: phần chậm nhất của lưu lượng phải chờ quá lâu để nhận câu trả lời.
 - Ba bước kiểm tra đầu tiên:
-- Mitigation tạm thời:
-- Owner:
+  1. Xác nhận P95/P99 và TTFT trên panel latency trong đúng khoảng cảnh báo.
+  2. Lọc log `response_sent` có latency cao và lấy một `correlation_id` đại diện.
+  3. Mở trace cùng correlation ID, so sánh thời gian retrieval và generation.
+- Mitigation tạm thời: rollback prompt/config vừa thay đổi nếu generation tăng; tắt scenario gây chậm hoặc giảm tải nếu retrieval tăng.
+- Owner: `student-02359`
 
 ## Alert 2
 
-- Tên:
-- Severity:
-- Duration:
-- Kênh thông báo: Slack
-- SLI/SLO liên quan:
-- Điều kiện và thời gian duy trì:
-- Ảnh hưởng tới người dùng:
+- Tên: `HighRequestErrorRate`
+- Severity: `critical`
+- Duration: `5m`
+- Kênh thông báo: Slack `#k4-l3b-alerts`
+- SLI/SLO liên quan: tỷ lệ request tốt trong primary SLO.
+- Điều kiện và thời gian duy trì: `error_rate_pct > 2%` trong 5 phút.
+- Ảnh hưởng tới người dùng: nhiều request không nhận được câu trả lời thành công.
 - Ba bước kiểm tra đầu tiên:
-- Mitigation tạm thời:
-- Owner:
+  1. Xác nhận error rate và nhóm `error_type` trên panel errors.
+  2. Lọc `request_failed`, chọn một correlation ID trong cửa sổ sự cố.
+  3. Mở trace tương ứng để tìm observation lỗi và status message.
+- Mitigation tạm thời: khôi phục cấu hình gần nhất, vô hiệu hóa incident scenario và chuyển sang fallback an toàn khi phù hợp.
+- Owner: `student-02359`
 
 ## Alert 3
 
-- Tên:
-- Severity:
-- Duration:
-- Kênh thông báo: Slack
-- SLI/SLO liên quan:
-- Điều kiện và thời gian duy trì:
-- Ảnh hưởng tới người dùng:
+- Tên: `LowRetrievalSuccessRate`
+- Severity: `warning`
+- Duration: `10m`
+- Kênh thông báo: Slack `#k4-l3b-alerts`
+- SLI/SLO liên quan: guardrail retrieval success tối thiểu 90%.
+- Điều kiện và thời gian duy trì: `retrieval_success_rate_pct < 90%` trong 10 phút.
+- Ảnh hưởng tới người dùng: câu trả lời có thể thiếu context hoặc thất bại hoàn toàn.
 - Ba bước kiểm tra đầu tiên:
-- Mitigation tạm thời:
-- Owner:
+  1. Xác nhận retrieval success và error type trên panel errors.
+  2. Lọc log có `tool_name=retrieval` và `tool_success=false`, lấy correlation ID.
+  3. Mở trace tương ứng, kiểm tra retrieval observation và dữ liệu đầu vào đã scrub.
+- Mitigation tạm thời: dùng fallback document an toàn, khôi phục cấu hình retrieval và giảm concurrency nếu backend quá tải.
+- Owner: `student-02359`
