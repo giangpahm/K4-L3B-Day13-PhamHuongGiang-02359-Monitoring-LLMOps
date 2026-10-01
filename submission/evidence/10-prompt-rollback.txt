@@ -1,0 +1,10 @@
+Langfuse project: day13-k4-l3b-02359
+Prompt: day13-chat
+
+PROMOTED production -> version 2 labels ['candidate', 'production', 'latest']
+ROLLED BACK production -> version 1 labels ['baseline', 'production']
+CANDIDATE remains -> version 2 labels ['candidate', 'latest']
+
+Version 1 trace: 33637eeba04592241d6452c324e006e4 (production, correlation req-5b2360be)
+Version 2 trace: e5c3d1d603ad603e4b6257fd69dc1b2a (candidate, correlation req-d7250dcb)
+

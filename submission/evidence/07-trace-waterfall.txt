@@ -1,0 +1,9 @@
+Langfuse project: day13-k4-l3b-02359
+Trace ID: 33637eeba04592241d6452c324e006e4
+
+lab-agent-run [AGENT] observation=f725470419c43c9d parent=None
+|- retrieval [RETRIEVER] observation=7c0c32de2fe4dbe6 parent=f725470419c43c9d
+`- generation [GENERATION] observation=7bddfd58446c1e8c parent=f725470419c43c9d
+
+The shared trace ID and child parentObservationId values verify the parent-child relationship.
+

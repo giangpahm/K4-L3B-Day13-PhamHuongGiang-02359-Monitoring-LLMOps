@@ -1,0 +1,6 @@
+Runtime source: data/logs.jsonl
+
+{"service":"api","latency_ms":1236,"ttft_ms":50,"tokens_in":52,"tokens_out":151,"cost_usd":0.002421,"quality_score":0.8,"tool_name":"retrieval","tool_success":true,"payload":{"answer_preview":"Starter answer. You should improve this output logic and add better quality chec..."},"event":"response_sent","correlation_id":"req-d7250dcb","model":"claude-sonnet-4-5","env":"dev","session_id":"candidate-v2","feature":"qa","user_id_hash":"66e50fe15217","level":"info","ts":"2026-10-01T04:21:46.104363Z"}
+
+Required runtime fields visible: ts, event, correlation_id, model, env, feature, latency_ms.
+

@@ -1,0 +1,5 @@
+Command: .venv\Scripts\python.exe -m pytest -q -p no:cacheprovider --tb=short
+Date: 2026-10-01 (Asia/Saigon)
+
+......................                                                   [100%]
+22 passed in 1.64s

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>K4-L3B Day 13 Monitoring & LLMOps</title><style>
+*{box-sizing:border-box} body{margin:0;background:#09111f;color:#e6edf7;font:15px Inter,Segoe UI,Arial,sans-serif}
+.wrap{max-width:1420px;margin:auto;padding:28px} header{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}
+h1{font-size:27px;margin:0 0 7px} .sub{color:#8ca0bd} .range{background:#142238;border:1px solid #29405f;border-radius:10px;padding:10px 14px;color:#b9c9df}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px} .panel{min-height:220px;background:linear-gradient(150deg,#111e31,#0e1929);border:1px solid #263b57;border-radius:15px;padding:20px;box-shadow:0 8px 26px #0005}
+.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:start} h2{font-size:16px;margin:0;color:#bfd0e8} .ok,.bad{font-size:11px;padding:5px 8px;border-radius:20px;white-space:nowrap} .ok{color:#6ee7b7;background:#064e3b88} .bad{color:#fca5a5;background:#7f1d1d88}
+.metric{font-size:38px;font-weight:750;margin:28px 0 15px;color:#f8fbff} .metric small{font-size:13px;font-weight:500;color:#8ca0bd;margin-left:8px}
+.details{color:#aebed3;min-height:38px} .threshold{margin-top:18px;padding-top:14px;border-top:1px solid #243751;color:#6ea8fe;font-size:13px}
+footer{margin-top:18px;color:#7388a4;font-size:12px;display:flex;justify-content:space-between} @media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style></head><body><main class="wrap"><header><div><h1>K4-L3B Day 13 Monitoring & LLMOps</h1><div class="sub">Runtime dashboard · source: data/logs.jsonl</div></div><div class="range">Time range: Last 60 minutes · Refresh: 30s</div></header>
+<div class="grid">
+      <section class="panel">
+        <div class="panel-head"><h2>Latency percentiles & TTFT</h2><span class="ok">Within threshold</span></div>
+        <div class="metric">2,169<small>ms P95</small></div>
+        <div class="details">P50 414 ms · P99 2,192 ms · TTFT P95 50 ms</div>
+        <div class="threshold">Threshold / SLO: P95 ≤ 3,000 ms</div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Request traffic</h2><span class="ok">Within threshold</span></div>
+        <div class="metric">41<small>requests / 60 min</small></div>
+        <div class="details">41 successful responses · 0 failed requests</div>
+        <div class="threshold">Threshold / SLO: ≥ 1 request/min target</div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Errors & retrieval</h2><span class="ok">Within threshold</span></div>
+        <div class="metric">0.0<small>% error rate</small></div>
+        <div class="details">Retrieval success 100.0% · 0 errors</div>
+        <div class="threshold">Threshold / SLO: Error ≤ 2% · retrieval ≥ 90%</div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Cost over time</h2><span class="ok">Within threshold</span></div>
+        <div class="metric">$0.0845<small>USD total</small></div>
+        <div class="details">Average $0.0021 per response</div>
+        <div class="threshold">Threshold / SLO: Total ≤ $2.50</div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Input & output tokens</h2><span class="ok">Within threshold</span></div>
+        <div class="metric">6,758<small>tokens</small></div>
+        <div class="details">Input 1,406 · Output 5,352</div>
+        <div class="threshold">Threshold / SLO: Total ≤ 50,000</div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Quality proxy</h2><span class="ok">Within threshold</span></div>
+        <div class="metric">0.88<small>score 0–1</small></div>
+        <div class="details">Based on 41 completed responses</div>
+        <div class="threshold">Threshold / SLO: Average ≥ 0.75</div>
+      </section></div><footer><span>Generated 2026-10-01 04:24:49 UTC</span><span>87 structured log records · no raw PII displayed</span></footer></main></body></html>

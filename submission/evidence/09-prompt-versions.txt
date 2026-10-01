@@ -1,0 +1,14 @@
+Langfuse project: day13-k4-l3b-02359
+Prompt name/type: day13-chat / text
+
+Version 1 labels after rollback: baseline, production
+Version 2 labels after rollback: candidate, latest
+
+Version 1 template:
+Feature={{feature}}
+Docs={{docs}}
+Question={{message}}
+
+Version 2 adds the instruction:
+Answer in bullet points using only the supplied documents.
+

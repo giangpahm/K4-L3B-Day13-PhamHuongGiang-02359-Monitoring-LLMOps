@@ -1,0 +1,16 @@
+Langfuse project: day13-k4-l3b-02359
+Observed through Langfuse Observations API v2 on 2026-10-01.
+
+Recent trace IDs (each contains root agent + retrieval + generation observations):
+1. 33637eeba04592241d6452c324e006e4
+2. 3f4ebc1f0b18f380324a30480004d569
+3. 0b614215f30636a87c01f36859b05079
+4. 851398b1e760e201109173cc7578a77d
+5. 686dd25ea818ce9ebfe4a0333b020f0e
+6. 587f42b5a951d982ad0cb3b938ceaa50
+7. 16d73fcc24723ef9d110db8cf560066c
+8. 99c666303873bdc8174a2faacc5f9d25
+9. 6765205a05d9b8eaad3898db9362b395
+10. 1fe97a34c79953f0d1c6fbb05b6a6e65
+11. e5c3d1d603ad603e4b6257fd69dc1b2a (candidate v2)
+

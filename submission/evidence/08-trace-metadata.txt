@@ -1,0 +1,11 @@
+Langfuse project: day13-k4-l3b-02359
+Trace ID: 33637eeba04592241d6452c324e006e4
+Correlation ID: req-5b2360be
+Model: claude-sonnet-4-5
+Prompt: day13-chat
+Prompt label/version: production / 1
+Prompt source: langfuse
+Input/output/total tokens: 28 / 87 / 115
+Generation cost: USD 0.001389
+PII: no raw PII stored in this metadata evidence.
+

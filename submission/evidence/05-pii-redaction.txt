@@ -1,0 +1,8 @@
+Runtime source: data/logs.jsonl. The original sample workload contained synthetic email, Vietnamese phone and card values. The persisted output is redacted before JSON rendering:
+
+{"payload":{"message_preview":"What is your refund policy? My email is [REDACTED_EMAIL]"},"event":"request_received","correlation_id":"req-1cebc40e","feature":"qa","env":"dev"}
+{"payload":{"message_preview":"Here is my phone [REDACTED_PHONE_VN], what should be logged?"},"event":"request_received","correlation_id":"req-dcda1d36","feature":"qa","env":"dev"}
+{"payload":{"message_preview":"What is the policy for PII and credit card [REDACTED_CREDIT_CARD]?"},"event":"request_received","correlation_id":"req-422ae99a","feature":"qa","env":"dev"}
+
+Validator result: Potential PII leaks detected: 0.
+
