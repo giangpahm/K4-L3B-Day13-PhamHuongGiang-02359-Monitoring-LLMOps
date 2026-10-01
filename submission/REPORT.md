@@ -6,7 +6,7 @@
 - **MSSV:** 02359
 - **Lớp:** K4-L3B
 - **Repository URL:** https://github.com/giangpahm/K4-L3B-Day13-PhamHuongGiang-02359-Monitoring-LLMOps
-- **Commit SHA cuối:** điền SHA sau khi commit toàn bộ thay đổi và evidence trong báo cáo này
+- **Commit SHA nội dung/evidence:** `4d53dc0a8f9f1679f328867ff2c3b384fa493e21` (commit sau đó chỉ cập nhật metadata SHA/checklist trong report; dùng SHA mới nhất trên `main` để nộp LMS)
 - **Challenge ID:** `day13-k4-l3b-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3b-02359`
 
@@ -95,4 +95,4 @@ Dashboard được sinh lại bằng `python scripts/generate_dashboard.py` từ
 - [x] Dashboard runtime đủ sáu panel, time range, đơn vị và threshold.
 - [x] Repository chạy lại được theo README; không commit `.env`, key hoặc log thô.
 - [x] Challenge chính thức đã được điều tra; evidence `12`–`14` nối metric → log → trace.
-- [ ] Commit thay đổi cuối, cập nhật Commit SHA ở mục 1, rồi nộp URL + SHA lên LMS/Codelabs.
+- [x] Đã commit nội dung/evidence và cập nhật SHA trong report; dùng commit mới nhất trên `main` để nộp LMS/Codelabs.
