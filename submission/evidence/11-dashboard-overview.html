@@ -12,15 +12,15 @@ footer{margin-top:18px;color:#7388a4;font-size:12px;display:flex;justify-content
 </style></head><body><main class="wrap"><header><div><h1>K4-L3B Day 13 Monitoring & LLMOps</h1><div class="sub">Runtime dashboard · source: data/logs.jsonl</div></div><div class="range">Time range: Last 60 minutes · Refresh: 30s</div></header>
 <div class="grid">
       <section class="panel">
-        <div class="panel-head"><h2>Latency percentiles & TTFT</h2><span class="ok">Within threshold</span></div>
-        <div class="metric">2,169<small>ms P95</small></div>
-        <div class="details">P50 414 ms · P99 2,192 ms · TTFT P95 50 ms</div>
+        <div class="panel-head"><h2>Latency percentiles & TTFT</h2><span class="bad">Threshold breached</span></div>
+        <div class="metric">4,664<small>ms P95</small></div>
+        <div class="details">P50 495 ms · P99 4,707 ms · TTFT P95 50 ms</div>
         <div class="threshold">Threshold / SLO: P95 ≤ 3,000 ms</div>
       </section>
       <section class="panel">
         <div class="panel-head"><h2>Request traffic</h2><span class="ok">Within threshold</span></div>
-        <div class="metric">41<small>requests / 60 min</small></div>
-        <div class="details">41 successful responses · 0 failed requests</div>
+        <div class="metric">46<small>requests / 60 min</small></div>
+        <div class="details">46 successful responses · 0 failed requests</div>
         <div class="threshold">Threshold / SLO: ≥ 1 request/min target</div>
       </section>
       <section class="panel">
@@ -31,19 +31,19 @@ footer{margin-top:18px;color:#7388a4;font-size:12px;display:flex;justify-content
       </section>
       <section class="panel">
         <div class="panel-head"><h2>Cost over time</h2><span class="ok">Within threshold</span></div>
-        <div class="metric">$0.0845<small>USD total</small></div>
+        <div class="metric">$0.0966<small>USD total</small></div>
         <div class="details">Average $0.0021 per response</div>
         <div class="threshold">Threshold / SLO: Total ≤ $2.50</div>
       </section>
       <section class="panel">
         <div class="panel-head"><h2>Input & output tokens</h2><span class="ok">Within threshold</span></div>
-        <div class="metric">6,758<small>tokens</small></div>
-        <div class="details">Input 1,406 · Output 5,352</div>
+        <div class="metric">7,703<small>tokens</small></div>
+        <div class="details">Input 1,581 · Output 6,122</div>
         <div class="threshold">Threshold / SLO: Total ≤ 50,000</div>
       </section>
       <section class="panel">
         <div class="panel-head"><h2>Quality proxy</h2><span class="ok">Within threshold</span></div>
-        <div class="metric">0.88<small>score 0–1</small></div>
-        <div class="details">Based on 41 completed responses</div>
+        <div class="metric">0.87<small>score 0–1</small></div>
+        <div class="details">Based on 46 completed responses</div>
         <div class="threshold">Threshold / SLO: Average ≥ 0.75</div>
-      </section></div><footer><span>Generated 2026-10-01 04:24:49 UTC</span><span>87 structured log records · no raw PII displayed</span></footer></main></body></html>
+      </section></div><footer><span>Generated 2026-10-01 06:02:15 UTC</span><span>100 structured log records · no raw PII displayed</span></footer></main></body></html>

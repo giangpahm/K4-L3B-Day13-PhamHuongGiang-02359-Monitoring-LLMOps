@@ -20,3 +20,20 @@ def test_scrub_common_vietnamese_phone_formats() -> None:
         out = scrub_text(f"Contact: {phone_number}")
         assert phone_number not in out
         assert "REDACTED_PHONE_VN" in out
+
+
+def test_scrub_cccd_card_and_passport() -> None:
+    out = scrub_text("CCCD 001234567890, card 4111 1111 1111 1111, passport A1234567")
+
+    assert "001234567890" not in out
+    assert "4111 1111 1111 1111" not in out
+    assert "A1234567" not in out
+    assert "REDACTED_CCCD" in out
+    assert "REDACTED_CREDIT_CARD" in out
+    assert "REDACTED_PASSPORT" in out
+
+
+def test_scrub_preserves_correlation_id_that_resembles_passport() -> None:
+    correlation_id = "req-A1234567"
+
+    assert scrub_text(correlation_id) == correlation_id

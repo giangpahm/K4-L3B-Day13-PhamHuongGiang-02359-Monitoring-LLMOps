@@ -1,8 +1,11 @@
-Runtime source: data/logs.jsonl. The original sample workload contained synthetic email, Vietnamese phone and card values. The persisted output is redacted before JSON rendering:
+Runtime source: `.tmp/pii-evidence-final.jsonl`, generated through the FastAPI `/chat`
+endpoint with four synthetic inputs. `scripts/show_pii_evidence.ps1` rendered these
+persisted `request_received` records:
 
-{"payload":{"message_preview":"What is your refund policy? My email is [REDACTED_EMAIL]"},"event":"request_received","correlation_id":"req-1cebc40e","feature":"qa","env":"dev"}
-{"payload":{"message_preview":"Here is my phone [REDACTED_PHONE_VN], what should be logged?"},"event":"request_received","correlation_id":"req-dcda1d36","feature":"qa","env":"dev"}
-{"payload":{"message_preview":"What is the policy for PII and credit card [REDACTED_CREDIT_CARD]?"},"event":"request_received","correlation_id":"req-422ae99a","feature":"qa","env":"dev"}
+{"event":"request_received","correlation_id":"req-10000001","payload":{"message_preview":"Contact [REDACTED_EMAIL]"}}
+{"event":"request_received","correlation_id":"req-10000002","payload":{"message_preview":"Call [REDACTED_PHONE_VN]"}}
+{"event":"request_received","correlation_id":"req-10000003","payload":{"message_preview":"CCCD [REDACTED_CCCD]"}}
+{"event":"request_received","correlation_id":"req-10000004","payload":{"message_preview":"Card [REDACTED_CREDIT_CARD]"}}
 
+PASS: 4/4 synthetic PII types redacted; correlation IDs preserved.
 Validator result: Potential PII leaks detected: 0.
-

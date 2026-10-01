@@ -8,7 +8,9 @@ PII_PATTERNS: dict[str, str] = {
     "phone_vn": r"(?<!\d)(?:\+84|0)(?:[ .-]?\d){9}(?!\d)",
     "cccd": r"\b\d{12}\b",
     "credit_card": r"\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b",
-    "passport": r"(?i)\b[A-Z]\d{7}\b",
+    # Require a standalone token so request IDs such as ``req-A1234567`` keep
+    # their correlation value and can still join logs to traces.
+    "passport": r"(?i)(?<![\w-])[A-Z]\d{7}\b",
 }
 
 
